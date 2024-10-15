@@ -34,9 +34,9 @@ export default {
             </div>
         </div>
         <div class="row gy-5">
-            <div class="col-4" v-for="(project) in projects" :key="project.id">
+            <div class="col-4" v-for="project in projects" :key="project.id">
                 <div class="card h-100">
-                    <img class="card-img-top" :src="project.image" alt="">
+                    <img class="card-img-top" :src="project.image != null ? `http://127.0.0.1:8000/storage/${project.image}` : 'https://placehold.co/600x400?text=Hello+World'">
                     <div class="card-body">
                         <h3>{{ project.title }}</h3>
                         <p>{{ project.description }}</p>
