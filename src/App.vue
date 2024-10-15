@@ -1,16 +1,16 @@
 <script>
-import AppProjects from './components/AppProjects.vue';
+import AppProjectCard from './components/AppProjectCard.vue';
 
 export default {
   components:{
-    AppProjects,
+    AppProjectCard,
   }
 }
 </script>
 
 <template>
   <div>
-    <AppProjects />
+    <AppProjectCard />
   </div>
 </template>
 
