@@ -12,11 +12,11 @@ export default {
                     <div class="col-12">
                         <div class="my-4 fw-bold fst-italic">
                             <ul class="mt-2 mx-3 d-flex list-unstyled">
-                                <li class="me-3">
-                                    <a class="text-decoration-none text-reset" href="">HOME</a>
+                                <li class="me-4">
+                                    <router-link class="text-reset text-decoration-none" :to="{ name: 'homepage' }">HOME</router-link>
                                 </li>
-                                <li class="me-3">
-                                    <a class="text-decoration-none text-reset" href="">PORTFOLIO</a>
+                                <li class="me-4">
+                                    <router-link class="text-reset text-decoration-none" :to="{ name: 'portfolio' }">PORTFOLIO</router-link>
                                 </li>
                             </ul>
                         </div>

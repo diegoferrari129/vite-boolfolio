@@ -9,7 +9,7 @@ export default {
         <div class="row">
             <div class="col-12">
                 <h1 class="text-center py-5">
-                    P
+                    HOMEPAGE
                 </h1>
             </div>
         </div>
