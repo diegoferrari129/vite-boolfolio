@@ -1,6 +1,8 @@
 <script>
 export default {
-    
+    props: {
+        menu: Array
+    }
 }
 </script>
 
@@ -12,11 +14,8 @@ export default {
                     <div class="col-12">
                         <div class="my-4 fw-bold fst-italic">
                             <ul class="mt-2 mx-3 d-flex list-unstyled">
-                                <li class="me-4">
-                                    <router-link class="text-reset text-decoration-none" :to="{ name: 'homepage' }">HOME</router-link>
-                                </li>
-                                <li class="me-4">
-                                    <router-link class="text-reset text-decoration-none" :to="{ name: 'portfolio' }">PORTFOLIO</router-link>
+                                <li class="me-4" v-for="(item, index) in menu" :key="index">
+                                    <router-link class="text-reset text-decoration-none" :to="{ name: item.name }">{{item.label}}</router-link>
                                 </li>
                             </ul>
                         </div>

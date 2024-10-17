@@ -1,5 +1,6 @@
 <script>
 import AppHeader from './components/AppHeader.vue';
+import { store } from './store';
 
 export default {
 
@@ -9,7 +10,7 @@ export default {
 
   data() {
     return {
-
+      store,
     }
   },
 
@@ -17,7 +18,7 @@ export default {
 </script>
 
 <template>
-  <AppHeader />
+  <AppHeader :menu="store.menuItems"/>
   <router-view></router-view>
 </template>
 
