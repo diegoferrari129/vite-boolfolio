@@ -23,7 +23,7 @@ export default {
                     this.success = true
                 }
                 else{
-
+                    this.$router.push({name: 'show_project_not_found'});
                 }
             });
         },
