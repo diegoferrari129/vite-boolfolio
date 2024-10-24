@@ -16,8 +16,8 @@ export default {
 
 <template>
     <div class="col-4">
-        <router-link class="text-reset text-decoration-none" :to="{ name: 'show_project', params: { slug: project.slug } }">
-            <div class="card h-100">
+        <div class="card h-100">
+            <router-link class="text-reset text-decoration-none" :to="{ name: 'show_project', params: { slug: project.slug } }">
                 
                 <div class="card_img">
                     <img class="card-img-top img-fluid" :src="project.image != null ? `http://127.0.0.1:8000/storage/${project.image}` : 'https://placehold.co/600x400?text=Hello+World'">
@@ -44,8 +44,8 @@ export default {
 
                 </div>
 
-            </div>
-        </router-link>
+            </router-link>
+        </div>
     </div>
 </template>
 
