@@ -4,6 +4,7 @@ import HomePage from './components/pages/HomePage.vue';
 import Portfolio from './components/pages/Portfolio.vue';
 import ShowProject from './components/pages/ShowProject.vue';
 import ProjectNotFound from './components/pages/ProjectNotFound.vue';
+import Contact from './components/pages/Contact.vue';
 
 const router = createRouter ({
     history: createWebHistory(),
@@ -28,6 +29,13 @@ const router = createRouter ({
 
             component:
                 ShowProject,
+        },
+        {
+            path: '/contacts',
+            name: 'contacts',
+
+            component:
+                Contact,
         },
         {
             path: '/portfolio/:pathMatch(.*)*',

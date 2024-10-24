@@ -12,10 +12,10 @@ export default {
 
   data() {
     return {
-        store,
-        projects: [],
-        last_page: null,
-        current_page: null,
+      store,
+      projects: [],
+      last_page: null,
+      current_page: null,
         
     }
   },

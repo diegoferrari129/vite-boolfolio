@@ -3,15 +3,38 @@ import { store } from '../../store';
 import axios from 'axios';
 export default {
     data() {
-    return {
-        store,
-        name: '',
-        surname: '',
-        email: '',
-        phone: '',
-        content: '',
-    }
+        return {
+            store,
+            name: '',
+            surname: '',
+            email: '',
+            phone: '',
+            content: '',
+        }
+    },
+    methods: {
+        sendForm(){
+            const data = {
+                name: this.name,
+                surname: this.surname,
+                email: this.email,
+                phone: this.phone,
+                content: this.content,
+            }
+
+            axios.post(`${store.baseUrl}/contacts`, data).then((response) =>{
+                if(response.data.success){
+                    this.name = '';
+                    this.surname = '';
+                    this.email = '';
+                    this.phone = '';
+                    this.content = '';
+                }
+            });
+            
+        }
   },
+
 }
 </script>
 
@@ -23,26 +46,26 @@ export default {
             </div>
             <div class="col-12">
                 <form method="post" @submit.prevent="sendForm()">
-                    <div class="row gy-2">
-                        <div class="col-12">
+                    <div class="row gy-4">
+                        <div class="col-6">
                             <label class="control-label">Name</label>
-                            <input type="text" class="form-controll" name="name" id="name" v-model="name">
+                            <input type="text" class="form-control" name="name" id="name" v-model="name">
                         </div>
-                        <div class="col-12">
+                        <div class="col-6">
                             <label class="control-label">Surname</label>
-                            <input type="text" class="form-controll" name="surname" id="surname" v-model="surname">
+                            <input type="text" class="form-control" name="surname" id="surname" v-model="surname">
                         </div>
-                        <div class="col-12">
+                        <div class="col-6">
                             <label class="control-label">eMail</label>
-                            <input type="text" class="form-controll" name="email" id="email" v-model="email">
+                            <input type="text" class="form-control" name="email" id="email" v-model="email">
                         </div>
-                        <div class="col-12">
+                        <div class="col-6">
                             <label class="control-label">Phone Number</label>
-                            <input type="number" name="phone" id="phone" v-model="phone">
+                            <input type="number" class="form-control" name="phone" id="phone" v-model="phone">
                         </div>
                         <div class="col-12">
                             <label class="control-label">Text</label>
-                            <textarea class="form-controll" name="content" id="content" v-model="content"></textarea>
+                            <textarea class="form-control" name="content" id="content" rows="4" cols="50" v-model="content"></textarea>
                         </div>
                         <div class="col-12">
                             <button class="btn btn-sm btn-success" type="submit">Send</button>
